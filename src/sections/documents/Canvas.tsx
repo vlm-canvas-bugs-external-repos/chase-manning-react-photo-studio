@@ -5,6 +5,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectEvents, Event } from "../../state/fileSlice";
 import { Position, setCanvasPosition } from "../../state/cursorSlice";
 
+declare global {
+  interface Window {
+    __PIXI_APP__: any;
+  }
+}
+
 const StyledCanvas = styled.div`
   width: 900px;
   height: 600px;
@@ -18,6 +24,8 @@ const app = new PIXI.Application({
   resolution: 1,
   preserveDrawingBuffer: true,
 });
+
+window.__PIXI_APP__ = app;
 
 const Circle = (
   graphics: PIXI.Graphics,
