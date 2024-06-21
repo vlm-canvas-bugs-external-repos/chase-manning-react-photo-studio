@@ -7,9 +7,9 @@
 
 ```typescript
  declare global {
- interface Window {
- __PIXI_APP__: any;
- }
+    interface Window {
+        __PIXI_APP__: any;
+    }
  }
 ```
 
